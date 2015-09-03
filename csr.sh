@@ -21,15 +21,15 @@ printf "FQDN/CommonName (i.e. www.google.com): "
 read COMMONNAME
 printf "Organization Unit (i.e. Ops): "
 read ORGUNIT
-printf "E-mail Address (i.e. emai@example.com) [optional]: "
+printf "E-mail Address (i.e. email@example.com) [optional]: "
 read EMAILADDR
-printf "What is your Organizations name (i.e. ACME): "
+printf "Organizations name (i.e. ACME): "
 read ORG
-printf "What is your country code (i.e. US) [can only be two letters]: "
+printf "Country code (i.e. US) [can only be two letters]: "
 read CC
-printf "What is the city you are in (i.e. San Francisco): "
+printf "City you are in (i.e. San Francisco): "
 read CITY
-printf "What is the state you are in (i.e. California): "
+printf "State you are in (i.e. California): "
 read STATES
 echo "Type SubjectAltNames for the certificate, one per line. Enter a blank line to finish"
 SAN=1   # bogus to begin loop
