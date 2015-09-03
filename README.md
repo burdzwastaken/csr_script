@@ -9,6 +9,7 @@ The script will allow you to create csr (certificate signing requests) really qu
 	# ./csr.sh
 
 or 
+
 	# cd ./csr_script
 	# sh csr.sh
 
