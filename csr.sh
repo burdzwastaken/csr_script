@@ -25,6 +25,12 @@ printf "E-mail Address (i.e. emai@example.com) [optional]: "
 read EMAILADDR
 printf "What is your Organizations name (i.e. ACME): "
 read ORG
+printf "What is your country code (i.e. US) [can only be two letters]: "
+read CC
+printf "What is the city you are in (i.e. San Francisco): "
+read CITY
+printf "What is the state you are in (i.e. California): "
+read STATES
 echo "Type SubjectAltNames for the certificate, one per line. Enter a blank line to finish"
 SAN=1   # bogus to begin loop
 SANAMES="DNS:${COMMONNAME}"   # always include the CN
@@ -73,13 +79,13 @@ fi
 cat <<EOF >> $CONFIG
  [ req_distinguished_name ]
  countryName                     = Country Name (2 letter code)
- countryName_default             = US
+ countryName_default             = $CC
  countryName_min                 = 2
  countryName_max                 = 2
  stateOrProvinceName             = State or Province Name (full name)
- stateOrProvinceName_default     = California
+ stateOrProvinceName_default     = $STATES
  localityName                    = Locality Name (eg, city)
- localityName_default            = San Francisco
+ localityName_default            = $CITY
  0.organizationName              = Organization Name (eg, company)
  0.organizationName_default      = $ORG
  organizationalUnitName          = Organizational Unit Name (eg, section)
